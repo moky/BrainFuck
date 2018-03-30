@@ -1,4 +1,4 @@
-# Base functions
+# Basic functions
 
 ## clean(current) : Clear current cell
     [-]     // use loop to clear the current cell
@@ -58,7 +58,7 @@
     ]
     >>>>[-<<<<+>>>>]<<<<    // move cell #4 back to #0
 
-## divide(dividend, divisor, quotient, remainder) : Divide cell #0 with #1, save quotient in #2 and remainder in #3
+## div(numerator, denominator, quotient, remainder) : Divide cell #0 with #1, save quotient in #2 and remainder in #3
     >>[-]>[-]>[-]>[-]>[-]<<<<<< // clear cells #2~6
     [->>+>+<<<]                 // copy cell #0 to #2 and #3
     >>[-<<+>>]<<                // move cell #2 back to #0
