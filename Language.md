@@ -1,4 +1,4 @@
-# Operators
+# Base functions
 
 ## clean(current) : Clear current cell
     [-]     // use loop to clear the current cell
@@ -28,11 +28,13 @@
     >>[-<<+>>]<<    // move cell #2 to #0
 
 ## add(summand, addend, sum) : Add cell #0 with #1, save the result in #2
-    >>[-]>[-]<<<        // clear cell #2 and #3
-    [->>+>+<<<]         // copy cell #0 to #2 and #3
+    >
+        >[-]>[-]<<      // clear cell #2 and #3
+        [->+>+<<]       // copy cell #1 to #2 and #3
+        >>[-<<+>>]<<    // move cell #3 back to #1
+    <
+    [->>+>+<<<]         // add cell #0 to #2 and #3
     >>>[-<<<+>>>]<<<    // move cell #3 back to #0
-    >[->+>+<<]<         // add cell #2 with #1
-    >>>[-<<+>>]<<<      // move cell #3 back to #1
 
 ## minus(minuend, subtrahend, difference) : Minus cell #0 with #1, save the result in #2
     >>[-]>[-]<<<        // clear cell #2 and #3
