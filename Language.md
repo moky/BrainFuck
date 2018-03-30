@@ -57,8 +57,27 @@
 ## devide(dividend, divisor, quotient, remainder) : Devide cell #0 with #1, save quotient in #2 and remainder in #3
 
 
-
-
-
-
+## ceil(dividend, divisor, quotient) : Devide cell #0 with #1, save the ceil in #2
+    >>[-]>[-]>[-]>[-]>[-]<<<<<< // clear cells #2~6
+    [->>+>+<<<]                 // copy cell #0 to #2 and #3
+    >>[-<<+>>]<<                // move cell #2 back to #0
+    >
+        >>[                     // check #3: remainder
+            <<[->>>+>+<<<<]>>   // copy cell #1 to #4 #5
+            >[-<<<+>>>]<        // move cell #4 back to #1
+            >>[-                // decrease #5: divisor
+                <<
+                [-              // decrease #3: remainder
+                    [->+<]      // move cell #3 to #4
+                    >>[->+<]<<  // move cell #5 to #6
+                ]
+                >
+                [-<+>]          // move cell #4 back to #3
+                >>
+                [-<+>]          // move cell #6 back to #5
+                <
+            ]<<
+            <+>                 // increase #2: quotient
+        ]<<
+    <
 
