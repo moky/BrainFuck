@@ -27,6 +27,8 @@
     [->+<]          // move cell #0 to next
     >>[-<<+>>]<<    // move cell #2 to #0
 
+# Math
+
 ## add(summand, addend, sum) : Add cell #0 with #1, save the result in #2
     >>[-]>[-]<<<        // clear cell #2 and #3
     [->>+>+<<<]         // copy cell #0 to #2 and #3
@@ -90,6 +92,28 @@
             >>>[-<<<<->>>>]<<<  // minus cell #3 with #7
             <<-<
         >>>>>>]<<<<<<
+    <
+
+## pow(x, n) : Multiply x(#0) for n(#1) times, save the result in #2
+    >>[-]>[-]>[-]<<<<    // clear cells #2~5
+    [->>+>>+<<<<]        // copy cell #0 to #2 #4
+    >>[-<<+>>]<<         // move cell #2 back to #0
+    >
+        >>+<<            // set cell #3 to 1
+        [                // use loop to do the math
+            ->+>         // move cell #1 to #2
+                multiply(#3, #4, #5)    // do the multiply from cell #3 and #4
+                [-]                     // clear cell #3
+                >>[-<<+>>]<<            // move cell #5(the result) back to #3
+            <<
+        ]                // calculate done! the result is saved in cell #3
+        >
+            backward(#2) // move cell #2 backward
+            >
+            backward(#3) // move cell #3 backward
+            >[-]<        // clear cell #4
+            <
+        <
     <
 
 ## mod(dividend, divisor, remainder) : Divide cell #0 with #1, save remainder(mod) in #2
