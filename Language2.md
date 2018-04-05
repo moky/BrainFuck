@@ -19,7 +19,7 @@
 +               // p4; cell#4 flag
                 // p4; cell#5 = cell#3 = cell#1
                 // p4; cell#6; buffer
-<<              //  p2
+<<              // p2
 
 // p2
 [
