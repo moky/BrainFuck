@@ -50,7 +50,7 @@
 ## min(x, y. min{x,y}): put the min value from #0 and #1 to #2
 
 ```
-perpare_compare(x, y, x, y, flag, x, buffer);
+perpare_compare(#0, #1, #2, #3, #4, #5, #6);
 
 // if flag is set; then #0 smaller than #1; else #0 lager equals #1
 >[-]+>                                   // p4; set #3 = 1
@@ -66,7 +66,7 @@ perpare_compare(x, y, x, y, flag, x, buffer);
 ## max(x, y. max{x,y}): put the max value from #0 and #1 to #2
 
 ```
-perpare_compare(x, y, x, y, flag, x, buffer);
+perpare_compare(#0, #1, #2, #3, #4, #5, #6);
 
 // if flag is set; then #0 smaller than #1; else #0 lager equals #1
 >[-]+>                                   // p4; set #3 = 1
