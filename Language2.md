@@ -1,6 +1,6 @@
 # Advance functions
     1. px means the pointer value after executing this line
-    1. #x means the order x of the cell
+    2. #x means the order x of the cell
 
 ## compare(x, y, ret): compare #0 and #1
 
