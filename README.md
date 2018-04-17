@@ -38,7 +38,7 @@
 | Algorithm |                      | [Algorithm functions](Algorithm.md)            |
 |           | swap(left, right)    | Swap two cells #0 and #1                       |
 |           | max(a, b)            | Compare cell #0 and #1, save the maximum in #2 |
-|           | min(a, b)            | Compare cell #0 and 1, save the minimum in #2  |
+|           | min(a, b)            | Compare cell #0 and #1, save the minimum in #2 |
 | Math      |                                                     | [Math functions](Math.md)                             |
 |           | add(summand, addend, sum)                           | Add cell #0 with #1, save the result in #2            |
 |           | minus(minuend, subtrahend, difference)              | Minus cell #0 with #1, save the result in #2          |
