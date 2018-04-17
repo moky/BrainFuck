@@ -27,3 +27,11 @@
 
 * http://fatiherikli.github.io/brainfuck-visualizer/
 * http://copy.sh/brainfuck/
+
+## Functions
+
+| Class | Name                 | Description        |
+|-------|----------------------|--------------------|
+| Basic | clean(current)       | Clear current cell |
+|       | copy(source, target) | Copy cell to next  |
+
