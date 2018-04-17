@@ -28,7 +28,7 @@
         <[-]>                   // clear cell #3
     <<<<
 
-## min(a, b) : Compare cell #0 and 1, save the minimum in #2
+## min(a, b) : Compare cell #0 and #1, save the minimum in #2
     >>[-]>[-]>[-]>[-]>[-]<<<<<< // clear cell #2~6
     [->>+>+>+<<<<]              // copy cell #0 to #2 #3 #4
     >>[-<<+>>]<<                // move cell #2 back to #0
