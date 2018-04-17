@@ -34,6 +34,11 @@
 |-----------|----------------------|--------------------|
 | Basic     | clean(current)       | Clear current cell |
 |           | copy(source, target) | Copy cell to next  |
-| Algorithm | swap(left, right)    | Swap two cells #0 and #1                       |
-|           | max(a, b)            | Compare cell #0 and #1, save the maximum in #2 |
-|           | min(a, b)            | Compare cell #0 and 1, save the minimum in #2  |
+| Algorithm | swap(left, right) | Swap two cells #0 and #1                       |
+|           | max(a, b)         | Compare cell #0 and #1, save the maximum in #2 |
+|           | min(a, b)         | Compare cell #0 and 1, save the minimum in #2  |
+| Math      | add(summand, addend, sum)                           | Add cell #0 with #1, save the result in #2            |
+|           | minus(minuend, subtrahend, difference)              | Minus cell #0 with #1, save the result in #2          |
+|           | multiply(multiplicand, multiplier, product)         | Multiply cell #0 with #1, save the result in #2       |
+|           | divide(numerator, denominator, quotient, remainder) | Divide cell #0 with #1, save quot in #2 and rem in #3 | 
+|           | pow(x, n)                                           | Multiply x(#0) for n(#1) times, save the result in #2 |
