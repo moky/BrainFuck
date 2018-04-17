@@ -30,12 +30,13 @@
 
 ## Functions
 
-| Class     | Name                 | Description        |
-|-----------|----------------------|--------------------|
-| Basic     |                      | [Language.md]      |
-|           | clean(current)       | Clear current cell |
-|           | copy(source, target) | Copy cell to next  |
-| Algorithm | swap(left, right) | Swap two cells #0 and #1                       |
+| Class     | Name                 | Description          |
+|-----------|----------------------|----------------------|
+| Basic     |                      | [Basic](Language.md) |
+|           | clean(current)       | Clear current cell   |
+|           | copy(source, target) | Copy cell to next    |
+| Algorithm |                   | [Algorithm](Algorithm.md)                      |
+|           | swap(left, right) | Swap two cells #0 and #1                       |
 |           | max(a, b)         | Compare cell #0 and #1, save the maximum in #2 |
 |           | min(a, b)         | Compare cell #0 and 1, save the minimum in #2  |
 | Math      | add(summand, addend, sum)                           | Add cell #0 with #1, save the result in #2            |
