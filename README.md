@@ -30,8 +30,10 @@
 
 ## Functions
 
-| Class | Name                 | Description        |
-|-------|----------------------|--------------------|
-| Basic | clean(current)       | Clear current cell |
-|       | copy(source, target) | Copy cell to next  |
-
+| Class     | Name                 | Description        |
+|-----------|----------------------|--------------------|
+| Basic     | clean(current)       | Clear current cell |
+|           | copy(source, target) | Copy cell to next  |
+| Algorithm | swap(left, right)    | Swap two cells #0 and #1                       |
+|           | max(a, b)            | Compare cell #0 and #1, save the maximum in #2 |
+|           | min(a, b)            | Compare cell #0 and 1, save the minimum in #2  |
