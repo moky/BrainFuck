@@ -47,3 +47,19 @@
         ]<
         <[-]>                   // clear cell #3
     <<<<
+
+## sort(array) : Sort the array starts from cell #1, head(#0) and tail are 0
+    /**
+     *  input:  array & count
+     *  codes:
+     *          int flag = count;
+     *          for (int k; k = flag;) {
+     *              flag = 0;
+     *              for (int j = 1; j SMALLER THAN k; INC j) {
+     *                  if (ITEM LEFT GREATER THAN ITEM j) {
+     *                      swap(LEFT AND J);
+     *                      flag = j;
+     *                  }
+     *              }
+     *          }
+     */
