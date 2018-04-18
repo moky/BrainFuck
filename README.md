@@ -9,7 +9,7 @@
     [	if the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.
     ]	if the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command.
 
-## "Hello world!"
+## "Hello World!"
 
     >+++ [<++++ >-] <-
     [>>+++ [<+++ >-] < [>>+ >+ >+ [<]<-] >>- - >>++ >++++ >+++ [<]<<-]
@@ -23,22 +23,23 @@
     [>>+++ [<++++ >-] <- [>>+ >+ >+ [<] <-] >>>- >>+++ [<] <<-]
     >>>. >+. >----. >.
 
-## Run it
+## Run It
 
 * http://fatiherikli.github.io/brainfuck-visualizer/
 * http://copy.sh/brainfuck/
 
-## My Functions
+## My Fucking Codes
 
 | Class     | Name                 | Description                    |
 |-----------|----------------------|--------------------------------|
 | Basic     |                      | [Basic functions](Language.md) |
 |           | clean(current)       | Clear current cell             |
 |           | copy(source, target) | Copy cell to next              |
-| Algorithm |                      | [Algorithm functions](Algorithm.md)             |
-|           | swap(left, right)    | Swap two cells #0 and #1                        |
-|           | max(a, b)            | Compare cells #0 and #1, save the maximum in #2 |
-|           | min(a, b)            | Compare cells #0 and #1, save the minimum in #2 |
+| Algorithm |                      | [Algorithm functions](Algorithm.md)                         |
+|           | swap(left, right)    | Swap two cells #0 and #1                                    |
+|           | max(a, b)            | Compare cells #0 and #1, save the maximum in #2             |
+|           | min(a, b)            | Compare cells #0 and #1, save the minimum in #2             |
+|           | sort(array)          | Sort the array starts from cell #1, head(#0) and tail are 0 |
 | Math      |                                                     | [Math functions](Math.md)                             |
 |           | add(summand, addend, sum)                           | Add cell #0 with #1, save the result in #2            |
 |           | minus(minuend, subtrahend, difference)              | Minus cell #0 with #1, save the result in #2          |
