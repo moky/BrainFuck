@@ -4,7 +4,7 @@
     /**
      *  INPUT:  left & right
      *  CODES:
-     *          var temp;
+     *          var temp = 0;
      *          temp  = right;
      *          right = left;
      *          left  = temp;
@@ -23,7 +23,9 @@
      *  CODES:
      *          var result = a;
      *          var temp = b;
-     *          if (a SMALLER_THAN b) {
+     *          var _a = a;
+     *          var _b = b;
+     *          if (_a SMALLER_THAN _b) {
      *              result = temp;
      *          }
      */
@@ -65,7 +67,9 @@
      *  CODES:
      *          var result = b;
      *          var temp = a;
-     *          if (a SMALLER_THAN b) {
+     *          var _a = a;
+     *          var _b = b;
+     *          if (_a SMALLER_THAN _b) {
      *              result = temp;
      *          }
      */
