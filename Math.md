@@ -108,6 +108,34 @@
     >>>>[-<<<<+>>>>]<<<<    // move cell #4 back to #0
 
 ## divide(numerator, denominator, quotient, remainder) : Divide cell #0 with #1, save quotient in #2 and remainder in #3
+    /**
+     *  INPUT:  numerator & denominator
+     *  CODES:
+     *          int quotient  = 0;          // #2
+     *          int remainder = numerator;  // #3
+     *          int t4        = 0;          // #4
+     *          int divisor   = 0;          // #5
+     *          int t6        = 0;          // #6
+     *          int t7        = 0;          // #7
+     *          
+     *          while (remainder) {
+     *              divisor = denominator;          // copy #1 to #5 with #4
+     *              while (divisor) {
+     *                  decrease(divisor);
+     *                  if (remainder) {
+     *                      decrease(remainder);    // decrease #3 when not 0 with #4
+     *                      t7 = divisor;           // copy #5 to #7 with #6
+     *                  }
+     *              }
+     *              increase(quotient);
+     *          }
+     *          
+     *          if (t7) {
+     *              remainder = denominator MINUS t7;
+     *              decrease(quotient);             // quotient NOT touched ceil when remainder NOT 0
+     *          }
+     */
+    
     >>[-]>[-]>[-]>[-]>[-]<<<<<< // clear cells #2~6
     [->>+>+<<<]                 // copy cell #0 to #2 and #3
     >>[-<<+>>]<<                // move cell #2 back to #0
