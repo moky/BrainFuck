@@ -1,6 +1,35 @@
 # Math functions
 
 ## add(summand, addend, sum) : Add cell #0 with #1, save the result in #2
+    /**
+     *  INPUT:  summand & addend
+     *  CODES:
+     *          int sum = 0;
+     *          int temp = 0;
+     *
+     *          // 1st: copy #0 to #2
+     *          while (summand) {
+     *              decrease(summand);
+     *              increase(sum);
+     *              increase(temp);
+     *          }
+     *          while (temp) {
+     *              decrease(temp);
+     *              increase(summand);
+     *          }
+     *
+     *          // 2nd: add #1 to #2
+     *          while (addend) {
+     *              decrease(addend);
+     *              increase(sum);
+     *              increase(temp);
+     *          }
+     *          while (temp) {
+     *              decrease(temp);
+     *              increase(addend);
+     *          }
+     */
+    
     >>[-]>[-]<<<        // clear cell #2 and #3
     [->>+>+<<<]         // copy cell #0 to #2 and #3
     >
@@ -10,6 +39,35 @@
     <
 
 ## minus(minuend, subtrahend, difference) : Minus cell #0 with #1, save the result in #2
+    /**
+     *  INPUT:  minuend & subtrahend
+     *  CODES:
+     *          int difference = 0;
+     *          int temp = 0;
+     *
+     *          // 1st: copy #0 to #2
+     *          while (minuend) {
+     *              decrease(minuend);
+     *              increase(difference);
+     *              increase(temp);
+     *          }
+     *          while (temp) {
+     *              decrease(temp);
+     *              increase(minuend);
+     *          }
+     *
+     *          // 2nd: minus #2 with #1
+     *          while (subtrahend) {
+     *              decrease(subtrahend);
+     *              decrease(difference);
+     *              increase(temp);
+     *          }
+     *          while (temp) {
+     *              decrease(temp);
+     *              increase(subtrahend);
+     *          }
+     */
+    
     >>[-]>[-]<<<        // clear cell #2 and #3
     [->>+>+<<<]         // copy cell #0 to #2 and #3
     >
