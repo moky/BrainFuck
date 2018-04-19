@@ -6,7 +6,7 @@
      *  CODES:
      *          int sum = 0;
      *          int temp = 0;
-     *
+     *          
      *          // 1st: copy #0 to #2
      *          while (summand) {
      *              decrease(summand);
@@ -17,7 +17,7 @@
      *              decrease(temp);
      *              increase(summand);
      *          }
-     *
+     *          
      *          // 2nd: add #1 to #2
      *          while (addend) {
      *              decrease(addend);
@@ -44,7 +44,7 @@
      *  CODES:
      *          int difference = 0;
      *          int temp = 0;
-     *
+     *          
      *          // 1st: copy #0 to #2
      *          while (minuend) {
      *              decrease(minuend);
@@ -55,7 +55,7 @@
      *              decrease(temp);
      *              increase(minuend);
      *          }
-     *
+     *          
      *          // 2nd: minus #2 with #1
      *          while (subtrahend) {
      *              decrease(subtrahend);
@@ -77,6 +77,24 @@
     <
 
 ## multiply(multiplicand, multiplier, product) : Multiply cell #0 with #1, save the result in #2
+    /**
+     *  INPUT:  multiplicand & multiplier
+     *  CODES:
+     *          int product = 0;
+     *          int t = 0;
+     *          int m = 0;
+     *          
+     *          while (multiplicand) {
+     *              decrease(multiplicand);
+     *              ADD multiplier(#1) TO product(#2) WITH t(#3) ONCE;
+     *              increase(m);
+     *          }
+     *          while (m) {
+     *              decrease(m);
+     *              increase(multiplicand);
+     *          }
+     */
+    
     >>[-]>[-]>[-]<<<<       // clear cell #2 and #3 and #4
     [
         ->
