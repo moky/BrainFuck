@@ -152,14 +152,14 @@
      */
     >>>> >>[-<<+>>]<<   //         { last| 0 0 c j=0 (k=C) flag=0 cnt=0 0 }
     [                   //  while (k)
-        [-<+<+>>]       //         { left| 0 0 c j=c (k=0) flag=0 cnt=C 0 }
-        <<[->>+<<]      //         { left| 0 0 (0) j=c k=c flag=0 cnt=C 0 }
+        [-<+<+>>]       //         { a b | 0 0 c j=c (k=0) flag=0 cnt=C 0 }
+        <<[->>+<<]      //         { a b | 0 0 (0) j=c k=c flag=0 cnt=C 0 }
         >-[<<<          //  for (j = k_1; j; __j)
             <<[->>+>+<<<]>>     // { 0 b |(a) a 0 j=? k=c  flag=? cnt=C 0 }
             >[-<<<+>>>]<        // { a b |(a) 0 0 j=? k=c  flag=? cnt=C 0 }
             <[->                // decrease(b);
                 [-[->>+<<]]     // r0 = a minus b until 0
-                >>[-<<+>>]<<    // use r2 to store the temp value
+                >>[-<<+>>]<<    // use r2 to store the temp value of r0
                 >+<             // increase(r1);
             <]>                 // { a 0|(a-b) b 0 j=? k=c flag=? cnt=C 0 }
             >[-<<+>>]<          // { a b|(a-b) 0 0 j=? k=c flag=? cnt=C 0 }
@@ -179,31 +179,32 @@
             /**
              *  move the var_table step backward
              */
-            <[->>>>>>>>+<<<<<<<<]>
+            <[->>>> >>>>+<<<< <<<<]>
             >>>-                // decrease(j);
             [-<+>]>
             [-<+>]>
             [-<+>]>
             [-<+>]<<<
-        ]               //  for() END
+        ]               //  for(;j;) END
         
         /**
          *  move the var_table back to tail
          */
-        >>>>                    //  { head|0 0 0 j k flag cnt (0)|right }
+        >>>>                    //  { head|0 0 0 j=0 k=c flag=? cnt=C (0)|first }
         >[
             [-<<<< <<<<+>>>> >>>>]  // move item right to left
             <<[->+<]
             <[->+<]
             <[->+<]
             <[->+<]
-            >>>>
-        >]
+            >>>> >>             // step forward
+        ]<
+        <<<<                    //  { last|0 0 0 (j=0) k=c flag=? cnt=C 0 }
         
         /**
          *  k = flag;
          *  flag = 0;
          */
         >[-]>[-<+>]<    //  { 0 0 0 j (k=flag) flag=0 cnt=C 0 }
-    ]               //  while() END
+    ]               //  while(k) END
 
