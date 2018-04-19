@@ -4,8 +4,8 @@
     /**
      *  INPUT:  summand & addend
      *  CODES:
-     *          int sum = 0;
-     *          int temp = 0;
+     *          int sum  = 0;   // #2
+     *          int temp = 0;   // #3
      *          
      *          // 1st: copy #0 to #2
      *          while (summand) {
@@ -42,8 +42,8 @@
     /**
      *  INPUT:  minuend & subtrahend
      *  CODES:
-     *          int difference = 0;
-     *          int temp = 0;
+     *          int difference = 0; // #2
+     *          int temp       = 0; // #3
      *          
      *          // 1st: copy #0 to #2
      *          while (minuend) {
@@ -80,9 +80,9 @@
     /**
      *  INPUT:  multiplicand & multiplier
      *  CODES:
-     *          int product = 0;
-     *          int t = 0;
-     *          int m = 0;
+     *          int product = 0;    // #2
+     *          int t       = 0;    // #3
+     *          int m       = 0;    // #4
      *          
      *          while (multiplicand) {
      *              decrease(multiplicand);
@@ -195,24 +195,26 @@
         >>+<<            // set cell #3 to 1
         [                // use loop to do the math
             ->+>         // move cell #1 to #2
-                multiply(#3, #4, #5)    // do the multiply from cell #3 and #4
+                multiply(#3, #4, #5);   // do the multiply from cell #3 and #4
                 [-]                     // clear cell #3
                 >>[-<<+>>]<<            // move cell #5(the result) back to #3
             <<
         ]                // calculate done! the result is saved in cell #3
         >
-            backward(#2) // move cell #2 backward
+            backward(#2);    // move cell #2 backward
             >
-            backward(#3) // move cell #3 backward
-            >[-]<        // clear cell #4
+            backward(#3);    // move cell #3 backward
+            >[-]<            // clear cell #4
             <
         <
     <
 
+# Extends
+
 ## mod(dividend, divisor, remainder) : Divide cell #0 with #1, save remainder(mod) in #2
-    divide(dividend, divisor, *quotient, *remainder)
+    divide(dividend, divisor, *quotient, *remainder);
     >>>
-    backward(*remainder)
+    backward(*remainder);
     <<<
 
 ## ceil(dividend, divisor, quotient) : Divide cell #0 with #1, save the ceil in #2
@@ -238,3 +240,17 @@
             <+>                 // increase #2: quotient
         ]<<
     <
+
+## square(x) : Calculate x*x
+    >[-]++<
+    pow(x, n);
+    >>
+        backward(#2);
+    <<
+
+## cube(x) : Calculate x^3
+    >[-]+++<
+    pow(x, n);
+    >>
+        backward(#2);
+    <<
