@@ -142,6 +142,24 @@
     <
 
 ## pow(x, n) : Multiply x(#0) for n(#1) times, save the result in #2
+    /**
+     *  INPUT:  x & n
+     *  CODES:
+     *          int result = 0; // #2
+     *          int m1     = 1; // #3
+     *          int m2     = x; // #4
+     *          int p      = 0; // #5
+     *          
+     *          while (n) {
+     *              decrease(n);
+     *              increase(result);
+     *              m1 = m1 * m2;
+     *          }
+     *          
+     *          n = result;
+     *          result = m1;
+     */
+    
     >>[-]>[-]>[-]<<<<    // clear cells #2~5
     [->>+>>+<<<<]        // copy cell #0 to #2 #4
     >>[-<<+>>]<<         // move cell #2 back to #0
