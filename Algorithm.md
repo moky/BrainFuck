@@ -121,6 +121,7 @@
      *          }
      */
     
+    [-]                         // make sure the head is 0
     >[>]                        // go to the tail
     
     /**
@@ -150,11 +151,11 @@
     /**
      *  2nd: Bubble Sort
      */
-    >>>> >>[-<<+>>]<<   //         { last| 0 0 c j=0 (k=C) flag=0 cnt=0 0 }
+    >>>> >>[-<<+>>]<<           // { last| 0 0 c j=0 (k=C) flag=0 cnt=0 0 }
     [                   //  while (k)
         [-<+<+>>]       //         { a b | 0 0 c j=c (k=0) flag=0 cnt=C 0 }
         <<[->>+<<]      //         { a b | 0 0 (0) j=c k=c flag=0 cnt=C 0 }
-        >-[<<<          //  for (j = k_1; j; __j)
+        >-[<<<          //      for (j = k_1; j; __j)
             <<[->>+>+<<<]>>     // { 0 b |(a) a 0 j=? k=c  flag=? cnt=C 0 }
             >[-<<<+>>>]<        // { a b |(a) 0 0 j=? k=c  flag=? cnt=C 0 }
             <[->                // decrease(b);
@@ -163,12 +164,13 @@
                 >+<             // increase(r1);
             <]>                 // { a 0|(a~b) b 0 j=? k=c flag=? cnt=C 0 }
             >[-<<+>>]<          // { a b|(a~b) 0 0 j=? k=c flag=? cnt=C 0 }
-            [[-]        //      if (a GREATER_THAN b)
+            [[-]                //  if (a GREATER_THAN b)
                 /**
                  *  swap(a b);
                  */
-                <[->+<]<[->+<]      // { (0)a| b  0 0 j=? k=c flag=? cnt=C 0 }
-                >>[-<<+>>]          // {  b a|(0) 0 0 j=? k=c flag=? cnt=C 0 }
+                <[->+<]         // { a(0)| b  0 0 j=? k=c flag=? cnt=C 0 }
+                <[->+<]         // { (0)a| b  0 0 j=? k=c flag=? cnt=C 0 }
+                >>[-<<+>>]      // {  b a|(0) 0 0 j=? k=c flag=? cnt=C 0 }
                 
                 /**
                  *  flag = k~j;
@@ -187,32 +189,28 @@
              */
             <[->>>> >>>>+<<<< <<<<]>
             >>>-                // decrease(j);
-            [-<+>]>
-            [-<+>]>
-            [-<+>]>
-            [-<+>]<<<<
-        ]               //  for(;j;) END
-        
-        /**
-         *  move the var_table back to tail
-         */
-        >>>>                    //  { head|0 0 0 j=0 k=c flag=? cnt=C (0)|first }
-        >[
-            [-<<<< <<<<+>>>> >>>>]  // move item right to left
-            <<[->+<]
-            <[->+<]
-            <[->+<]
-            <[->+<]
-            >>>> >>             // step forward
-        ]<
-        <<<<                    //  { last|0 0 0 (j=0) k=c flag=? cnt=C 0 }
+            [-<+>]>             // backward(j);
+            [-<+>]>             // backward(k);
+            [-<+>]>             // backward(flag);
+            [-<+>]<<<<          // backward(cnt);
+        ]               //      for(;j;) END
         
         /**
          *  k = flag;
          *  flag = 0;
          */
-        >[-]>[-<+>]<    //  { 0 0 0 j (k=flag) flag=0 cnt=C 0 }
-    ]               //  while(k) END
-    <<<<    // { last|(0) 0 0 j=0 k=0 flag=0 cnt=C 0 }
+        >[-]>[-<+>]             // { 0 0 0 j k=flag (flag=0) cnt=C 0 }
+        
+        /**
+         *  move the var_table back to tail
+         */
+        >>>[                    // { head|0 0 0 j=0 k=c flag=? cnt=C 0|(first) }
+            [-<<<< <<<<+>>>> >>>>]  // move item right to left
+            <<[->+<]                // forward(cnt);
+            <<[->+<]                // forward(k);
+            >>>> >                  // var_table pointer step forward
+        ]<<<<                   // { last|0 0 0 (j=0) k=c flag=? cnt=C 0 }
+    ]                   //  while(k) END
+    <<<<                        // { last|(0) 0 0 j=0 k=0 flag=0 cnt=C 0 }
     
     <[<]    // go back to the head
