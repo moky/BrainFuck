@@ -161,8 +161,8 @@
                 [-[->>+<<]]     // r0 = a minus b until 0
                 >>[-<<+>>]<<    // use r2 to store the temp value of r0
                 >+<             // increase(r1);
-            <]>                 // { a 0|(a-b) b 0 j=? k=c flag=? cnt=C 0 }
-            >[-<<+>>]<          // { a b|(a-b) 0 0 j=? k=c flag=? cnt=C 0 }
+            <]>                 // { a 0|(a~b) b 0 j=? k=c flag=? cnt=C 0 }
+            >[-<<+>>]<          // { a b|(a~b) 0 0 j=? k=c flag=? cnt=C 0 }
             [[-]        //      if (a GREATER_THAN b)
                 <<
                     swap(a b);
@@ -171,10 +171,10 @@
                 >[-]<           // { b a|0 0 0 j=? (k=c) flag=0 cnt=C 0 }
                 [->+>>+<<<]     // { b a|0 0 0 j=? (0)        k     C k }
                 >>>[-<<<+>>>]<<<// { b a|0 0 0 j=? (k)        k     C 0 }
-                <[->>->>+<<<<]> // { b a|0 0 0 0   (k)      k-j     C j }
-                >>>[-<<<+>>>]<<<// { b a|0 0 0 j   (k)      k-j     C 0 }
+                <[->>->>+<<<<]> // { b a|0 0 0 0   (k)      k~j     C j }
+                >>>[-<<<+>>>]<<<// { b a|0 0 0 j   (k)      k~j     C 0 }
                 <<<<
-            ]                   // { b a|(0) 0 0 j  k       k-j     C 0 }
+            ]                   // { b a|(0) 0 0 j  k       k~j     C 0 }
             
             /**
              *  move the var_table step backward
@@ -207,4 +207,6 @@
          */
         >[-]>[-<+>]<    //  { 0 0 0 j (k=flag) flag=0 cnt=C 0 }
     ]               //  while(k) END
-
+    <<<<    // { last|(0) 0 0 j=0 k=0 flag=0 cnt=C 0 }
+    
+    <[<]    // go back to the head
