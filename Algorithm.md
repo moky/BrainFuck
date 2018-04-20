@@ -139,9 +139,9 @@
      *  get count of the array item(s) and save it in cnt(#6)
      *
      */
-    <[
+    <[                          // { (last)|0 0 0 j=0 k=0 flag=0 cnt=? 0 }
         [->>>> >>>>+<<<< <<<<]  // move item left to right
-        >>>> >>>+ [-<+>]<       // increase counter and move backward
+        >>>> >>> [-<+>]<+       // move counter backward and increase it
         <<<< <<<                // var_table steps backward
     ]>                          // { head|(0) 0 0 j=0 k=0 flag=0 cnt=C 0|first }
     
@@ -152,7 +152,8 @@
      */
     >>>> >>>>[                  // { head|0 0 0 j=0 k=0 flag=0 cnt=C 0|(first) }
         [-<<<< <<<<+>>>> >>>>]  // move the item right to left
-        <<[->+<]>>>             // step forward
+        <<[->+<]>>              // move counter forward
+        >                       // var_table steps forward
     ]<<<< <<<<                  // { last|(0) 0 0 j=0 k=0 flag=0 cnt=C 0 }
     
     /**
@@ -235,7 +236,7 @@
             [-<<<< <<<<+>>>> >>>>]  // move item right to left
             <<[->+<]                // forward(cnt);
             <<[->+<]                // forward(k);
-            >>>> >                  // var_table pointer step forward
+            >>>> >                  // var_table steps forward
         ]<<<<                   // { last|0 0 0 (j=0) k=c flag=0 cnt=C 0 }
     ]
     /**
@@ -243,4 +244,4 @@
      */
     <<<<                        // { last|(0) 0 0 j=0 k=0 flag=0 cnt=C 0 }
     
-    <[<]    // go back to the head
+    <[<]    // pointer go back to the head
