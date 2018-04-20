@@ -107,9 +107,10 @@
 
 ## sort(array) : Sort the array starts from cell #1, head(#0) and tail(#n+1) are 0
     /**
-     *  INPUT:  array & count
+     *  INPUT:  array
      *  CODES:
-     *          int flag = count;
+     *          int cnt = count(array);
+     *          int flag = cnt;
      *          for (int k; k = flag;) {
      *              flag = 0;
      *              for (int j = 1; j SMALLER_THAN k; INC j) {
@@ -135,13 +136,13 @@
     
     /**
      *
-     *  get count of the array item(s) and save it in #6
+     *  get count of the array item(s) and save it in cnt(#6)
      *
      */
     <[
         [->>>> >>>>+<<<< <<<<]  // move item left to right
-        >>>> >>>+ [-<+>]<       // increase counter
-        <<<< <<<                // step backward
+        >>>> >>>+ [-<+>]<       // increase counter and move backward
+        <<<< <<<                // var_table steps backward
     ]>                          // { head|(0) 0 0 j=0 k=0 flag=0 cnt=C 0|first }
     
     /**
